@@ -9,7 +9,7 @@ This is a simple Userscript that reworks Google Search navigation tabs by applyi
 > The EU’s DMA law pushed Google to open access to competitors. In response, Google quietly removed the “Maps” tab from search navigation, making Maps harder to reach. This script restores the tab where it belongs.
 
 - **Removes the "Short videos" tab!** _(Optionally)_ 
-> Google added an "Short videos" tab with short media content. While you might find it useful, this script can remove the tab if desired (see [Instalation](#Installation)).
+> Google added an "Short videos" tab with short media content from social networks. While you might find it useful, this script can remove the tab if desired (see [Instalation](#Installation)).
 
 <br>
 
