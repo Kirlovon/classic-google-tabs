@@ -3,16 +3,28 @@
 // @namespace       classic-google-tabs
 // @author          Kirills Reunovs
 // @description     Brings back the "Maps" tab and removes the "AI Mode" tab in Google Search.
-// @version         2025-10-29
+// @version         2025-10-29.2
 // @icon            https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @updateURL       https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js
 // @downloadURL     https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js
-// @match           *://www.google.com/search*
 // @match           *://google.com/search*
+// @match           *://www.google.com/search*
+// @match           *://www.google.com.au/search*
 // @match           *://www.google.co.uk/search*
+// @match           *://www.google.ca/search*
 // @match           *://www.google.nl/search*
+// @match           *://www.google.be/search*
 // @match           *://www.google.de/search*
+// @match           *://www.google.dk/search*
 // @match           *://www.google.fr/search*
+// @match           *://www.google.se/search*
+// @match           *://www.google.no/search*
+// @match           *://www.google.fi/search*
+// @match           *://www.google.lv/search*
+// @match           *://www.google.lt/search*
+// @match           *://www.google.ie/search*
+// @match           *://www.google.pl/search*
+// @match           *://www.google.ru/search*
 // @match           *://www.google.tld/search*
 // @run-at          document-start
 // @grant           none
@@ -23,6 +35,9 @@ const REMOVE_AI_TAB = true;
 
 // Add Maps tab
 const ADD_MAPS_TAB = true;
+
+// Remove Short Videos tab
+const REMOVE_SHORT_VIDEOS_TAB = false;
 
 (function () {
     'use strict';
@@ -35,6 +50,19 @@ const ADD_MAPS_TAB = true;
         const listItems = document.querySelectorAll('[role="listitem"]');
         listItems.forEach(item => {
             if (excludedKeywords.some(keyword => item.textContent.includes(keyword))) {
+                item.remove();
+            }
+        });
+    }
+
+    /**
+     * Remove the "Short Videos" tab from the navigation list.
+     */
+    function removeShortVideosTab() {
+        const excludedKeywords = ['Short videos', 'Короткие видео', 'Korte video', 'Kurze videos', 'Vidéos courtes', 'Korte video'];
+        const listItems = document.querySelectorAll('[role="listitem"]');
+        listItems.forEach(item => {
+            if (excludedKeywords.some(keyword => item.textContent.toLowerCase().includes(keyword.toLowerCase()))) {
                 item.remove();
             }
         });
@@ -95,6 +123,7 @@ const ADD_MAPS_TAB = true;
     function reworkNavigation() {
         if (REMOVE_AI_TAB) removeAITab();
         if (ADD_MAPS_TAB) addMapsTab();
+        if (REMOVE_SHORT_VIDEOS_TAB) removeShortVideosTab();
     }
 
     // Observe changes in the navigation area to reapply modifications
