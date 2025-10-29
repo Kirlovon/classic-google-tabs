@@ -1,14 +1,20 @@
 // ==UserScript==
 // @name            Classic Google Tabs
 // @namespace       classic-google-tabs
-// @author          Kirlovon
+// @author          Kirills Reunovs
 // @description     Brings back the "Maps" tab and removes the "AI Mode" tab in Google Search.
 // @version         2025-10-29
-// @run-at          document-body
 // @icon            https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @updateURL       https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js
 // @downloadURL     https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js
-// @match           https://www.google.com/*
+// @match           *://www.google.com/search*
+// @match           *://google.com/search*
+// @match           *://www.google.co.uk/search*
+// @match           *://www.google.nl/search*
+// @match           *://www.google.de/search*
+// @match           *://www.google.fr/search*
+// @match           *://www.google.tld/search*
+// @run-at          document-start
 // @grant           none
 // ==/UserScript==
 
