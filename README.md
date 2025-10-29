@@ -1,8 +1,5 @@
 ![Poster](/assets/poster.webp)
 
-> [!NOTE]
-> I was tired of Google pushing AI features by replacing the first tab in the Google Searches navigation bar with an AI Mode. So, I created this Userscript, which removes "AI Mode" tab and restores the classic "Maps" tab.
-
 This is a simple Userscript that reworks Google Search navigation tabs by applying the following changes:
 
 - **Removes the "AI Mode" tab:** 
