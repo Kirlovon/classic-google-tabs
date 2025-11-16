@@ -22,7 +22,7 @@ This is a simple Userscript that reworks Google Search navigation tabs by applyi
     - [Greasemonkey](https://www.greasespot.net/)
     - [Userscripts](https://github.com/quoid/userscripts)
 
-2. Enable [userscripts in your browser](https://www.tampermonkey.net/faq.php#Q209).
+2. Enable [userscripts AND developer mode in your browser](https://www.tampermonkey.net/faq.php#Q209).
 
 3. Install the script by clicking [this link](https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js). _(or download `classic-google-tabs.user.js`) and install manually)_
 
