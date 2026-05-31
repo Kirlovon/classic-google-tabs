@@ -3,7 +3,7 @@
 // @namespace       classic-google-tabs
 // @author          Kirills Reunovs
 // @description     Brings back the "Maps" tab and removes the "AI Mode" tab in Google Search.
-// @version         2025-10-29.2
+// @version         2026-05-31
 // @icon            https://www.google.com/s2/favicons?sz=64&domain=google.com
 // @updateURL       https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js
 // @downloadURL     https://github.com/Kirlovon/classic-google-tabs/raw/main/classic-google-tabs.user.js
@@ -126,18 +126,18 @@ const REMOVE_SHORT_VIDEOS_TAB = false;
         if (REMOVE_SHORT_VIDEOS_TAB) removeShortVideosTab();
     }
 
-    // Observe changes in the navigation area to reapply modifications
+    // Observe page changes to reapply modifications when Google rebuilds navigation
     const observer = new MutationObserver(() => reworkNavigation());
     const startObserving = () => {
-        const navigation = document.querySelector('[role="navigation"]');
-        if (!navigation) setTimeout(startObserving, 50); // Retry if navigation not found yet
+        const root = document.documentElement;
+        if (!root) return setTimeout(startObserving, 50); // Retry if document root is not ready yet
 
-        observer.observe(navigation, {
+        reworkNavigation(); // Initial run once the document root is available
+        observer.observe(root, {
             childList: true,
             subtree: true
         });
     };
 
-    reworkNavigation(); // Initial run
     startObserving(); // Watch for changes
 })();
